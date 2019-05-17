@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TIMER</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    </head>
+    <body>
+        <div id="timercontainer">
+
+            <div id="displaytime">
+                <p id="time"></p>
+            </div>
+
+            <div id=buttons>
+                <div id="start">
+                    <input type="button" id="start_button" value="s" onclick="startButton();">
+                </div>
+
+                <div id="stop">
+                    <input type="button" id="pause_button" value="p" onclick="pauseButton();">
+                </div>
+            </div>
+
+            <div class=todoapp>
+                    <form id="js-form">
+                        <input
+                            id="js-form-input"
+                            class="new-todo"
+                            type="text"
+                            placeholder="what is your task?"
+                        />
+                    </form>
+
+            </div>
+            <div id="app-7">
+                <ol>
+                    <todo-item
+                        v-for="item in todoItems"
+                        v-bind:todo="item"
+                        v-bind:key="item.id"
+                    ></todo-item>
+                </ol>
+            </div>
+
+        </div>
+
+        
+    </body>
+    <footer>
+            <div style="text-align:right;font-family:Myfont">created by Naoto Kito </div>
+    </footer>
+    <script src="index.js" ></script>
+    <style>
+        /* #timercontainer{background-color:black}; */
+        .todoapp{
+            display: flex;
+            flex-direction: column;
+            margin: 5px 50px;
+            /* border: medium solid red;           */
+            align-items: center;
+            justify-content: center;
+            padding:10px;
+            
+        }
+
+        #buttons{
+            margin: 5px 50px;
+            /* display:flextは要素を横並びにする */
+            display: flex;
+            /* justify-content: は要素を中央へする  */
+            justify-content: center;
+            /* border: medium solid red; */
+
+        }
+     
+        body {
+            background-color: orange;
+        }
+        #timercontainer {
+            /* background-color:black; */
+            height: 90%;
+            /* background-color:orange; */
+            /* border: medium solid red; */
+        }
+        #displaytime{
+            /* align-content: center; */
+            margin: 10px 50px;
+            padding: 0px 50px;
+            /* background: black; */
+            /* border:medium solid blue; */
+        }   
+        #time{
+            color:black;
+            /* background-color: black; */
+            /* font-size:5em */
+            text-align:center;
+            font-family: 'Myfont';
+            font-size: 300%;
+            /* border:medium solid red; */
+        }
+        @font-face {
+            font-family: 'Myfont';
+            src: url("file:////Users/abcdef/reiwa/javascript/timer_app/Molot/Molot.otf")
+        }
+    </style>
+</html>
