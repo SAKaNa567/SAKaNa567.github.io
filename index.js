@@ -55,9 +55,7 @@ function displayTime(time) {
 
 // pauseボタンが押されたときの処理.
 function pauseButton() {
-    console.log(paused);
     if (paused){ //止まっているときの処理.（まだ開始されていない場合も含む。）
-        // 開始された状態からの場合は、再開させる＋止まってる状態を無効にする
         //startしてからのpauseからのpauseであった場合.
         if(startTime){//再開を行う.
             paused = 0;
