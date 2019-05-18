@@ -44,32 +44,3 @@ function displayTime(time) {
     let converted_time = ((hours > 0) ? hours+" hour " : "") + ((minutes > 0) ? minutes+" min " : "") + seconds + " sec";
     return converted_time
 }
-
-const formElement = document.querySelector("#js-form");
-//form要素から発生したsubmitイベントを受けとる。
-const inputElement = document.querySelector("#js-form-input");
-const todoList = []
-let id = 0;
-formElement.addEventListener("submit",(event) => {
-    //イベントが発生した時に呼ばれる.
-    event.preventDefault();
-    console.log(`${inputElement.value}`);
-    //配列に追加する.
-    todoList.push({
-        id: id++,
-        text: inputElement.value
-    });
-});
-
-//フォームから入力をし配列に格納されたものをvueで処理して描写.
-Vue.component('todo-item', {
-    props: ['todo'],
-    template: '<li>{{ todo.text }}</li>'
-})
-
-var tdapp = new Vue({
-    el: '#app-7',
-    data: {
-        todoItems: todoList
-    }
-})

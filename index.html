@@ -20,32 +20,8 @@
                 <div id="stop">
                     <input type="button" id="pause_button" value="p" onclick="pauseButton();">
                 </div>
-            </div>
-
-            <div class=todoapp>
-                    <form id="js-form">
-                        <input
-                            id="js-form-input"
-                            class="new-todo"
-                            type="text"
-                            placeholder="what is your task?"
-                        />
-                    </form>
-
-            </div>
-            <div id="app-7">
-                <ol>
-                    <todo-item
-                        v-for="item in todoItems"
-                        v-bind:todo="item"
-                        v-bind:key="item.id"
-                    ></todo-item>
-                </ol>
-            </div>
-
+            </div>           
         </div>
-
-        
     </body>
     <footer>
             <div style="text-align:right;font-family:Myfont">created by Naoto Kito </div>
@@ -75,7 +51,12 @@
         }
      
         body {
-            background-color: orange;
+            /* background-color: orange; */
+            background-color: #0062d6;
+            background: linear-gradient(135deg,rgba(82,229,231,.8) 10%,rgba(19,12,183,.8)),url(https://images.unsplash.com/photo-1510519138101-570d1dca3d66?crop=entropy&c…cHBfaWQiOjF9&ixlib=rb-0.3.5&q=80&s=2737407…&w=2400) no-repeat 50%;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
         }
         #timercontainer {
             /* background-color:black; */
@@ -94,7 +75,7 @@
             color:black;
             /* background-color: black; */
             /* font-size:5em */
-            text-align:center;
+            /* text-align:center; */
             font-family: 'Myfont';
             font-size: 300%;
             /* border:medium solid red; */
