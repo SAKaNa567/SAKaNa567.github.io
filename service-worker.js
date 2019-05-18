@@ -3,6 +3,7 @@ const FILES_TO_CACHE = [
     '/offline.html',
 ]
 
+const CACHE_NAME = 'pwa-sample-caches-v1';
 
 
 self.addEventListener('install', function(event){
