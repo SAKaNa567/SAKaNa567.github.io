@@ -1,10 +1,12 @@
 {
-    "name": "SIMPLE TIMER",
-    "short_name": "TIMER",
-    "backgronund_color": "#fc980c",
+    "name": "simple timer",
+    "short_name": "timer",
+    "background_color": "#fc980c",
     "icons": [{
-        
-    }]
-
-
+        "src": "./timer192.jpg",
+        "sizes": "192x192",
+        "type": "image/jpg"
+    }],
+    "start_url" : "./?utm_source=homescreen",
+    "display": "standalone"
 }
