@@ -40,7 +40,7 @@ self.addEventListener('fetch', function(event){
     }
     event.respondWith(
         fetch(event.request)
-            .cache( () => {
+            .catch( () => {
                 return caches.open(CACHE_NAME)
                     .then((cache) => {
                         return cache.match('offline.html');
