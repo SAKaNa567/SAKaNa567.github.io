@@ -3,7 +3,7 @@ const FILES_TO_CACHE = [
     '/offline.html',
 ]
 
-self.addEventListener('install', function(e){
+self.addEventListener('install', function(evt){
     console.log('[ServiceWorker] Install');
     //prechache static resource here.
     evt.waitUntil(
@@ -15,10 +15,10 @@ self.addEventListener('install', function(e){
     );
 });
 
-self.addEventListener('activate', function(e){
+self.addEventListener('activate', function(evt){
     console.log('[ServiceWorker] Activate');
     //remove previous cached data from disk.
-    evtwaitUntil(
+    evt.waitUntil(
         caches.keys().then((keyList) => {
             return Promise.all(keyList.map((key) => {
                 if(key !== CACHE_NAME){
@@ -30,7 +30,7 @@ self.addEventListener('activate', function(e){
     );
 });
 
-self.addEventListener('fetch', function(event){
+self.addEventListener('fetch', function(evt){
     //add fetch event handler here.
     if(evt.request.mode !== 'navigate') {
         //not a page navigation, bail.
