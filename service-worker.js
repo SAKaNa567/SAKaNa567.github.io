@@ -5,13 +5,12 @@ const FILES_TO_CACHE = [
 
 const CACHE_NAME = 'pwa-sample-caches-v1';
 
-
 self.addEventListener('install', function(event){
     console.log('[ServiceWorker] Install');
     //prechache static resource here.
     event.waitUntil(
         // caches.open() open cache.
-        caches.open(CACH_NAME).then((cache) => {
+        caches.open(CACHE_NAME).then((cache) => {
             console.log('[ServiceWorker] Pre-caching offline page');
             return cache.addAll(FILES_TO_CACHE);
         })
